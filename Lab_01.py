@@ -53,9 +53,17 @@ while P1+P2<cc:
         print("Nice!")
         P1+=1
         tablero_vacio.pop(coordenada1)
-        tablero_vacio.pop(coordenada2-1)
+        tablero_vacio.insert(coordenada1,'*')
+        
+        tablero_vacio.pop(coordenada2)
+        tablero_vacio.insert(coordenada2,'*')
+      
         tablero_respuestas.pop(coordenada1)
-        tablero_respuestas.pop(coordenada2-1)
+        tablero_respuestas.insert(coordenada1,'*')
+       
+        tablero_respuestas.pop(coordenada2)
+        tablero_respuestas.insert(coordenada2,'*')
+        
         
     print() 
     print(tablero_vacio)
