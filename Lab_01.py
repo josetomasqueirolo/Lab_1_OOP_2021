@@ -20,7 +20,7 @@ def generarjuego(m):   # m=número de cartas
 cc=int(input("Choose the number of cards (minimum 2): "))
 cartas_totales=cc*2
 tablero_respuestas=generarjuego(cc)
-# print(tablero_respuestas)   #sacar print
+print(tablero_respuestas)   #sacar print
 print()
 
 P1=0
@@ -52,6 +52,10 @@ while P1+P2<cc:
     else:
         print("Nice!")
         P1+=1
+        tablero_vacio.pop(coordenada1)
+        tablero_vacio.pop(coordenada2-1)
+        tablero_respuestas.pop(coordenada1)
+        tablero_respuestas.pop(coordenada2-1)
         
     print() 
     print(tablero_vacio)
@@ -73,6 +77,14 @@ while P1+P2<cc:
     else:
         print("Nice!")
         P2+=1
+        tablero_vacio.pop(coordenada1)
+        tablero_vacio.pop(coordenada2-1)
+        tablero_respuestas.pop(coordenada1)
+        tablero_respuestas.pop(coordenada2-1)
+
+    print() 
+    print(tablero_vacio)
+    print()
 
 print()
 if P1>P2:
