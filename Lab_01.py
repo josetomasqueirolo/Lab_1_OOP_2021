@@ -10,8 +10,9 @@ def generarjuego(m):   # m=número de cartas
                 numeros.append(i)    
         random.shuffle(numeros)
         tablero.append(numeros)
+    return(tablero)
            
-    # print(tablero)
+print(generarjuego(20))
         
 def generar_matriz(n):
     matriz = []
@@ -38,4 +39,4 @@ P0=0
 
 print('Player 1 starts playing.')
 
-print(matrix())
+
