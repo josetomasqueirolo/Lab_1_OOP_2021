@@ -49,18 +49,45 @@ tablero_vacio=[]
 for i in range(cartas_totales):
     tablero_vacio.append(0)
     
-print("Player 1 starts playing.")
-print(tablero_vacio)
 
+print(tablero_vacio)
+print()
 
 while P1+P2<cc:
     # TURNO JUGADOR 1
-    coordenada1_P1=int(input('Choose a coordinate: '))
+    print("~~~~Player1´s turn~~~~")
+    coordenada1=int(input('Choose a coordinate: '))
+    tablero_vacio[coordenada1]=tablero_respuestas[coordenada1]
+    print(tablero_vacio)
+    coordenada2=int(input('Choose a coordinate: '))
+    tablero_vacio[coordenada2]=tablero_respuestas[coordenada2]
+    print(tablero_vacio)
     
-    
-    coordenada2_P1=int(input('Choose a coordinate: '))
-    
+    if tablero_respuestas[coordenada1]!=tablero_respuestas[coordenada2]:
+        print("Fail")
+        tablero_vacio[coordenada1]=0
+        tablero_vacio[coordenada2]=0
+    else:
+        print("Nice!")
+        P1+=1
+        
+    print() 
+    print(tablero_vacio)
     print()
-    print(coordenada1_P1)
-    print(coordenada2_P1)   
-    break
+    
+    print("~~~~Player2´s turn~~~~")
+    coordenada1=int(input('Choose a coordinate: '))
+    tablero_vacio[coordenada1]=tablero_respuestas[coordenada1]
+    print(tablero_vacio)
+    coordenada2=int(input('Choose a coordinate: '))
+    tablero_vacio[coordenada2]=tablero_respuestas[coordenada2]
+    print(tablero_vacio)
+    
+    if tablero_respuestas[coordenada1]!=tablero_respuestas[coordenada2]:
+        print("Fail")
+        tablero_vacio[coordenada1]=0
+        tablero_vacio[coordenada2]=0
+    else:
+        print("Nice!")
+        P2+=1
+
