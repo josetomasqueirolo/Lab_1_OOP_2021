@@ -10,9 +10,13 @@ def generarjuego(m):   # m=número de cartas
                 numeros.append(i)    
         random.shuffle(numeros)
         tablero.append(numeros)
-    return(tablero)
+    
+    tablero_real=[]
+    for i in range(2):
+        for j in range(m):
+            tablero_real.append(tablero[i][j])
+    return tablero_real
            
-print(generarjuego(20))
         
 def generar_matriz(n):
     matriz = []
@@ -28,11 +32,12 @@ def imprime_matriz(matriz):
             var+= str(elemento) + " "
         print(var)
 
-n = int(input("tamaño matriz"))
-imprime_matriz(generar_matriz(n)) 
+# n = int(input("tamaño matriz"))
+# imprime_matriz(generar_matriz(n)) 
+
 
 cc=int(input("Choose the number of cards: "))
-generarjuego(cc)
+print(generarjuego(cc))
 
 P1=0
 P0=0
