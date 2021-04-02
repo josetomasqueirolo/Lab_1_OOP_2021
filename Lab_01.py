@@ -1,5 +1,4 @@
-from numpy import *
-from numpy import random
+import random
 
 def generategame(m):   # m=number of cards (this function creates and randomizes the ammount of numbers)
     table=[]
@@ -36,65 +35,74 @@ print()
 
 while P1+P2<cc:                                 #starts the game
     # PLAYER1'S TURN
-    print("~~~~Player1's turn~~~~")
-    coord1=int(input('Choose a coordinate: '))
-    table_close[coord1]=table_answers[coord1]
-    print(table_close)
-    coord2=int(input('Choose a coordinate: '))
-    table_close[coord2]=table_answers[coord2]
-    print(table_close)
-    
-    if table_answers[coord1]!=table_answers[coord2]:
-        print("Fail")
-        table_close[coord1]=0
-        table_close[coord2]=0
-    else:
-        print("Nice!")
-        P1+=1
-        table_close.pop(coord1)
-        table_close.insert(coord1,'*')
+    TURN= True
+    while TURN==True:
+        print("~~~~Player1's turn~~~~")
+        coord1=int(input('Choose a coordinate: '))
+        table_close[coord1]=table_answers[coord1]
+        print(table_close)
+        coord2=int(input('Choose a coordinate: '))
+        table_close[coord2]=table_answers[coord2]
+        print(table_close)
         
-        table_close.pop(coord2)
-        table_close.insert(coord2,'*')
-      
-        table_answers.pop(coord1)
-        table_answers.insert(coord1,'*')
-       
-        table_answers.pop(coord2)
-        table_answers.insert(coord2,'*')
+        if table_answers[coord1]!=table_answers[coord2]:
+            print("Fail")
+            table_close[coord1]=0
+            table_close[coord2]=0
+            TURN=False
+        else:
+            print("Nice!")
+            P1+=1
+            table_close.pop(coord1)
+            table_close.insert(coord1,'*')
+            
+            table_close.pop(coord2)
+            table_close.insert(coord2,'*')
         
+            table_answers.pop(coord1)
+            table_answers.insert(coord1,'*')
         
+            table_answers.pop(coord2)
+            table_answers.insert(coord2,'*')
+
+            print(table_close)
+
     print() 
     print(table_close)
     print()
     
     #PLAYER2'S TURN
-    print("~~~~Player2's turn~~~~")
-    coord1=int(input('Choose a coordinate: '))
-    table_close[coord1]=table_answers[coord1]
-    print(table_close)
-    coord2=int(input('Choose a coordinate: '))
-    table_close[coord2]=table_answers[coord2]
-    print(table_close)
-    
-    if table_answers[coord1]!=table_answers[coord2]:
-        print("Fail")
-        table_close[coord1]=0
-        table_close[coord2]=0
-    else:
-        print("Nice!")
-        P2+=1
-        table_close.pop(coord1)
-        table_close.insert(coord1,'*')
+    TURN= True
+    while TURN==True:
+        print("~~~~Player2's turn~~~~")
+        coord1=int(input('Choose a coordinate: '))
+        table_close[coord1]=table_answers[coord1]
+        print(table_close)
+        coord2=int(input('Choose a coordinate: '))
+        table_close[coord2]=table_answers[coord2]
+        print(table_close)
         
-        table_close.pop(coord2)
-        table_close.insert(coord2,'*')
-      
-        table_answers.pop(coord1)
-        table_answers.insert(coord1,'*')
-       
-        table_answers.pop(coord2)
-        table_answers.insert(coord2,'*')
+        if table_answers[coord1]!=table_answers[coord2]:
+            print("Fail")
+            table_close[coord1]=0
+            table_close[coord2]=0
+            TURN=False
+        else:
+            print("Nice!")
+            P2+=1
+            table_close.pop(coord1)
+            table_close.insert(coord1,'*')
+            
+            table_close.pop(coord2)
+            table_close.insert(coord2,'*')
+        
+            table_answers.pop(coord1)
+            table_answers.insert(coord1,'*')
+        
+            table_answers.pop(coord2)
+            table_answers.insert(coord2,'*')
+
+            print(table_close)
 
     print() 
     print(table_close)
